@@ -9,11 +9,16 @@ from google.auth.transport.requests import Request
 
 bot = telebot.TeleBot('telegrambotapi')
 
+
+# использую прокси для общения с ботом для отладки на локальной машине.
+# на хостинге это необязательно
 apihelper.proxy = {'https':'proxy'}
 
 spreadsheet_id = 'spreadsheet_id'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
+
+# добавляем несколько кнопок
 keyboard1 = telebot.types.ReplyKeyboardMarkup()
 keyboard1.row('in', 'out', 'time left', 'lunch')
 
